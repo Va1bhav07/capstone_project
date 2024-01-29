@@ -1,0 +1,15 @@
+{
+  "name": "capstone_project",
+  "version": "1.0.0",
+  "description": "Sem 4 Capstone project",
+  "main": "index.js",
+  "scripts": {
+    "install-server": "cd server && npm install",
+    "start-server": "cd server && npm start",
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm run build",
+    "start-client": "cd client && npm run start"
+  },
+  "author": "Vaibhav Arora",
+  "license": "ISC"
+}
