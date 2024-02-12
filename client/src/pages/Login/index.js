@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import CardComp from "../../components/Cards";
 import Card from "react-bootstrap/Card";
 import LoginForm from "./LoginForm";
+import axios from "axios";
 
 function Login() {
   const [formDataState, setFormData] = useState({
@@ -19,6 +20,40 @@ function Login() {
 
   const onFormSubmit = () => {
     console.log("fro :>> ", formDataState);
+    const { email, password } = formDataState;
+    const url = "http://localhost:4000/test";
+    if (!email || !password) {
+      return console.log("enter all values");
+    }
+
+    axios
+      .post(url, formDataState)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    // fetch(url, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(formDataState),
+    // })
+    //   .then((response) => {
+    //     if (!response.ok) {
+    //       throw new Error("Network response was not ok");
+    //     }
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     console.log("Response data:", data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("There was a problem with your fetch operation:", error);
+    //   });
   };
 
   return (
