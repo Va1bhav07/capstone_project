@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import CardComp from "../../components/Cards";
 import Card from "react-bootstrap/Card";
 import LoginForm from "./LoginForm";
+import SignupLink from "./SignupLink";
 import axios from "axios";
+import "./login.css";
 
 function Login() {
   const [formDataState, setFormData] = useState({
@@ -37,14 +39,17 @@ function Login() {
   };
 
   return (
-    <CardComp>
-      <Card.Title>Sign In</Card.Title>
-      <LoginForm
-        setFormData={setFormData}
-        handleFormChange={handleFormChange}
-        onFormSubmit={onFormSubmit}
-      />
-    </CardComp>
+    <section className="d-flex justify-content-center align-items-center">
+      <CardComp className="mt-5 card-comp p-4">
+        <Card.Title className="text-center fs-2 mb-4">Sign In</Card.Title>
+        <LoginForm
+          setFormData={setFormData}
+          handleFormChange={handleFormChange}
+          onFormSubmit={onFormSubmit}
+        />
+        <SignupLink />
+      </CardComp>
+    </section>
   );
 }
 

@@ -26,7 +26,7 @@ function LoginForm({ handleFormChange, onFormSubmit }) {
       onChange={handleFormChange}
     >
       <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
+        <Form.Group as={Col} controlId="validationCustom01">
           <Form.Label>Email</Form.Label>
           <Form.Control
             required
@@ -40,8 +40,8 @@ function LoginForm({ handleFormChange, onFormSubmit }) {
         </Form.Group>
       </Row>
 
-      <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
+      <Row className="mb-4">
+        <Form.Group as={Col} controlId="validationCustom02">
           <Form.Label>Password</Form.Label>
           <Form.Control
             required
@@ -55,7 +55,9 @@ function LoginForm({ handleFormChange, onFormSubmit }) {
           </Form.Control.Feedback>
         </Form.Group>
       </Row>
-      <Button type="submit">Submit form</Button>
+      <Button className="w-100" type="submit">
+        Submit form
+      </Button>
     </Form>
   );
 }

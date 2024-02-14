@@ -5,6 +5,7 @@ router.get("/", (_, res) => {
   return res.json("Api is working!...");
 });
 
-router.post("/login", authController.SignUpUser);
+router.post("/login", authController.LoginUser);
+router.post("/signup", authController.SignUpUser);
 
 module.exports = router;
