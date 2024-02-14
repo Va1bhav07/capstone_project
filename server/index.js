@@ -18,11 +18,7 @@ app.use((req, res, next) => {
 });
 
 //routes
-app.post("/test", (req, res) => {
-  console.log("req.body :>> ", req.body);
-  return res.status(201).json({ msg: "ok" });
-});
-// app.use("/", route);
+app.use("/", route);
 
 //connect to database
 connectDB();

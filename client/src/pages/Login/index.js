@@ -21,7 +21,7 @@ function Login() {
   const onFormSubmit = () => {
     console.log("fro :>> ", formDataState);
     const { email, password } = formDataState;
-    const url = "http://localhost:4000/test";
+    const url = "http://localhost:4000/login";
     if (!email || !password) {
       return console.log("enter all values");
     }
@@ -34,33 +34,12 @@ function Login() {
       .catch(function (error) {
         console.log(error);
       });
-
-    // fetch(url, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(formDataState),
-    // })
-    //   .then((response) => {
-    //     if (!response.ok) {
-    //       throw new Error("Network response was not ok");
-    //     }
-    //     return response.json();
-    //   })
-    //   .then((data) => {
-    //     console.log("Response data:", data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("There was a problem with your fetch operation:", error);
-    //   });
   };
 
   return (
     <CardComp>
       <Card.Title>Sign In</Card.Title>
       <LoginForm
-        formDataState={formDataState}
         setFormData={setFormData}
         handleFormChange={handleFormChange}
         onFormSubmit={onFormSubmit}
