@@ -28,4 +28,33 @@ const SignUpUser = async (req, res) => {
   }
 };
 
-module.exports = { SignUpUser };
+const LoginUser = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const userData = { email, password };
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Email and password are required.",
+      });
+    }
+    // const newUser = await UserModel.create(userData);
+    const foundUser = true;
+    if (!foundUser) throw new Error("foundUser returns falsy value");
+
+    res.status(201).json({
+      success: true,
+      message: "User Found successfully.",
+      foundUser,
+    });
+  } catch (error) {
+    console.error("Error finding user:", error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+      errormsg: `${error.message}===> ${error.name}`,
+    });
+  }
+};
+
+module.exports = { SignUpUser, LoginUser };
