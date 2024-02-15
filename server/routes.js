@@ -7,5 +7,6 @@ router.get("/", (_, res) => {
 
 router.post("/login", authController.LoginUser);
 router.post("/signup", authController.SignUpUser);
+router.post("/checkout", authController.CheckoutCourse)
 
 module.exports = router;
