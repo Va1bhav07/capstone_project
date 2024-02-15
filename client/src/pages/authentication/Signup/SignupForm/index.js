@@ -1,15 +1,15 @@
 import React from "react";
-import { FormComp, useFormHook } from "../../../components/Form";
+import { FormComp, useFormHook } from "../../../../components/Form";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-function SignupForm({ onFormSubmit }) {
+function SignupForm({ onFormSubmit, handleFormChange }) {
   return (
-    <FormComp onFormSubmit={onFormSubmit}>
+    <FormComp onFormSubmit={onFormSubmit} handleFormChange={handleFormChange}>
       <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
+        <Form.Group as={Col} controlId="validationCustom01">
           <Form.Label>Full Name</Form.Label>
           <Form.Control
             required
@@ -24,7 +24,7 @@ function SignupForm({ onFormSubmit }) {
       </Row>
 
       <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom02">
+        <Form.Group as={Col} controlId="validationCustom02">
           <Form.Label>Email</Form.Label>
           <Form.Control
             required
@@ -39,7 +39,7 @@ function SignupForm({ onFormSubmit }) {
       </Row>
 
       <Row className="mb-3">
-        <Form.Group as={Col} md="4" controlId="validationCustom03">
+        <Form.Group as={Col} controlId="validationCustom03">
           <Form.Label>Password</Form.Label>
           <Form.Control
             required
@@ -62,7 +62,9 @@ function SignupForm({ onFormSubmit }) {
           feedbackType="invalid"
         />
       </Form.Group>
-      <Button type="submit">Submit form</Button>
+      <Button className="w-100" type="submit">
+        Submit form
+      </Button>
     </FormComp>
   );
 }

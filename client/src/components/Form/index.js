@@ -7,10 +7,10 @@ export function useFormHook(initialState) {
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     name &&
-      setFormData({
-        ...formDataState,
+      setFormData((prevState) => ({
+        ...prevState,
         [name]: value,
-      });
+      }));
   };
 
   return {
@@ -23,8 +23,8 @@ export function useFormHook(initialState) {
 export function FormComp({
   handleFormChange,
   onFormSubmit,
-  formAttr = {},
   children,
+  ...props
 }) {
   const [validated, setValidated] = useState(false);
 
@@ -33,9 +33,10 @@ export function FormComp({
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.stopPropagation();
+      setValidated(true);
+      return;
     }
     onFormSubmit();
-    setValidated(true);
   };
 
   return (
@@ -44,7 +45,7 @@ export function FormComp({
       validated={validated}
       onSubmit={handleSubmit}
       onChange={handleFormChange}
-      {...formAttr}
+      {...props}
     >
       {children}
     </Form>

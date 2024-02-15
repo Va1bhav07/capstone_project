@@ -1,5 +1,5 @@
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Login from "./pages/authentication/Login";
+import Signup from "./pages/authentication/Signup";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 

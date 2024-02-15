@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import CardComp from "../../components/Cards";
+import CardComp from "../../../components/Cards";
 import Card from "react-bootstrap/Card";
 import LoginForm from "./LoginForm";
-import SignupLink from "./SignupLink";
+import SigninupLink from "../signinupLink";
 import axios from "axios";
-import "./login.css";
+import "../authentication.css";
 
 function Login() {
   const [formDataState, setFormData] = useState({
@@ -47,7 +47,7 @@ function Login() {
           handleFormChange={handleFormChange}
           onFormSubmit={onFormSubmit}
         />
-        <SignupLink />
+        <SigninupLink type={"signin"} />
       </CardComp>
     </section>
   );
