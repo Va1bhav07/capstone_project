@@ -1,13 +1,14 @@
 const UserModel = require("../models/userModel");
 
 const SignUpUser = async (req, res) => {
+  console.log("req.body :>> ", req.body);
   try {
-    const { email, password } = req.body;
-    const userData = { email, password };
-    if (!email || !password) {
+    const { fullName, email, password } = req.body;
+    const userData = { email, password, fullName };
+    if (!email || !password || !fullName) {
       return res.status(400).json({
         success: false,
-        message: "Email and password are required.",
+        message: "Name, Email and password are required.",
       });
     }
     const newUser = await UserModel.create(userData);
@@ -29,6 +30,7 @@ const SignUpUser = async (req, res) => {
 };
 
 const LoginUser = async (req, res) => {
+  console.log("req.body :>> ", req.body);
   try {
     const { email, password } = req.body;
     const userData = { email, password };

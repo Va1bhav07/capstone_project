@@ -12,10 +12,10 @@ function LoginForm({ handleFormChange, onFormSubmit }) {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.stopPropagation();
+      setValidated(true);
+      return;
     }
-
     onFormSubmit();
-    setValidated(true);
   };
 
   return (
