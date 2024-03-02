@@ -1,4 +1,5 @@
 const UserModel = require("../models/userModel");
+const bcrypt = require("bcrypt");
 
 const SignUpUser = async (req, res) => {
   console.log("req.body :>> ", req.body);
@@ -11,6 +12,12 @@ const SignUpUser = async (req, res) => {
         message: "Name, Email and password are required.",
       });
     }
+    const findUser = await UserModel.findOne({ email });
+    if (findUser)
+      return res.status(409).json({
+        success: false,
+        message: "User already exists.",
+      });
     const newUser = await UserModel.create(userData);
     if (!newUser) throw new Error("newUser returns falsy value");
 
@@ -24,7 +31,7 @@ const SignUpUser = async (req, res) => {
     res.status(500).json({
       success: false,
       message: "Internal server error",
-      errormsg: `${error.message}===> ${error.name}`,
+      errormsg: `${error.message} ===> ${error.name}`,
     });
   }
 };
@@ -40,11 +47,22 @@ const LoginUser = async (req, res) => {
         message: "Email and password are required.",
       });
     }
-    // const newUser = await UserModel.create(userData);
-    const foundUser = true;
-    if (!foundUser) throw new Error("foundUser returns falsy value");
+    const foundUser = await UserModel.findOne({ email });
+    if (!foundUser)
+      return res
+        .status(404)
+        .json({ success: false, message: "User does not exists" });
 
-    res.status(201).json({
+    const confirmUser = await bcrypt.compare(password, foundUser.password);
+
+    if (!confirmUser) {
+      return res.status(401).json({
+        success: false,
+        message: "Wrong password.",
+      });
+    }
+
+    res.status(200).json({
       success: true,
       message: "User Found successfully.",
       foundUser,
