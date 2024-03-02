@@ -5,6 +5,8 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import reportWebVitals from "./reportWebVitals";
 import Layout from "./Layout/Main";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,6 +14,7 @@ root.render(
     <BrowserRouter>
       <Layout>
         <App />
+        <ToastContainer />
       </Layout>
     </BrowserRouter>
   </React.StrictMode>

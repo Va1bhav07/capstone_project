@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import { useFormHook } from "../../../components/Form";
 import LoginForm from "./LoginForm";
 import SigninupLink from "../signinupLink";
-import axios from "axios";
+import { apiAxios } from "../../../utilities/axios";
 import "../authentication.css";
 import { useNavigate } from "react-router-dom";
 
@@ -18,23 +18,20 @@ function Login() {
 
   const { formDataState, handleFormChange } = useFormHook(initialFvalue);
 
-  const onFormSubmit = () => {
+  const onFormSubmit = async () => {
     console.log("fro :>> ", formDataState);
     const { email, password } = formDataState;
-    const url = "http://localhost:4000/login";
+    const url = "/login";
     if (!email || !password) {
       return console.log("enter all values");
     }
 
-    axios
-      .post(url, formDataState)
-      .then(function (response) {
-        console.log(response);
-        response?.status === 200 && navigate("/");
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    const response = await apiAxios.post(url, formDataState);
+    response && navigate("/");
+
+    // .catch(function (error) {
+    //   console.log(error);
+    // });
   };
 
   return (

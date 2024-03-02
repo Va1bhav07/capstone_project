@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import SignupForm from "./SignupForm";
 import CardComp from "../../../components/Cards";
 import { useFormHook } from "../../../components/Form";
 import SigninupLink from "../signinupLink";
 import Card from "react-bootstrap/Card";
 import "../authentication.css";
-import axios from "axios";
+import { apiAxios } from "../../../utilities/axios";
 import { useNavigate } from "react-router-dom";
 
 const initialFvalue = {
@@ -19,22 +19,15 @@ function Signup() {
 
   const { formDataState, handleFormChange } = useFormHook(initialFvalue);
 
-  const onFormSubmit = () => {
+  const onFormSubmit = async () => {
     console.log("fro :>> ", formDataState);
     const { fullName, email, password } = formDataState;
-    const url = "http://localhost:4000/signup";
+    const url = "/signup";
     if (!email || !password || !fullName) {
       return console.log("enter all values");
     }
-    axios
-      .post(url, formDataState)
-      .then(function (response) {
-        console.log(response);
-        response?.status === 201 && navigate("/");
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    const response = await apiAxios.post(url, formDataState);
+    response && navigate("/");
   };
 
   return (

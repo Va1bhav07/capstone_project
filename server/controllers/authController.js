@@ -58,13 +58,13 @@ const LoginUser = async (req, res) => {
     if (!confirmUser) {
       return res.status(401).json({
         success: false,
-        message: "Wrong password.",
+        message: "Password or email is wrong.",
       });
     }
 
     res.status(200).json({
       success: true,
-      message: "User Found successfully.",
+      message: "Login Successful.",
       foundUser,
     });
   } catch (error) {
