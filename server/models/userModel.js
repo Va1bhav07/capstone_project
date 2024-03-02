@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema({
   fullName: {
@@ -16,6 +17,14 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+});
+
+userSchema.pre("save", function (next) {
+  bcrypt.hash(this.password, 10, (error, hash) => {
+    console.log("hash on pre save pass userModal.js :>> ", this.password);
+    this.password = hash;
+    next();
+  });
 });
 
 const UserModal = model("Users", userSchema);

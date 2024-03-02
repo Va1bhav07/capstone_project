@@ -6,6 +6,7 @@ import SigninupLink from "../signinupLink";
 import Card from "react-bootstrap/Card";
 import "../authentication.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const initialFvalue = {
   fullName: "",
@@ -14,6 +15,8 @@ const initialFvalue = {
 };
 
 function Signup() {
+  const navigate = useNavigate();
+
   const { formDataState, handleFormChange, setFormData } =
     useFormHook(initialFvalue);
 
@@ -28,6 +31,7 @@ function Signup() {
       .post(url, formDataState)
       .then(function (response) {
         console.log(response);
+        response?.status === 201 && navigate("/");
       })
       .catch(function (error) {
         console.log(error);
