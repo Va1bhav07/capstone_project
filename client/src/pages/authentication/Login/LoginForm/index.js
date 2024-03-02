@@ -1,30 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import { FormComp } from "../../../../components/Form";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 
 function LoginForm({ handleFormChange, onFormSubmit }) {
-  const [validated, setValidated] = useState(false);
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.stopPropagation();
-      setValidated(true);
-      return;
-    }
-    onFormSubmit();
-  };
-
   return (
-    <Form
-      noValidate
-      validated={validated}
-      onSubmit={handleSubmit}
-      onChange={handleFormChange}
-    >
+    <FormComp onFormSubmit={onFormSubmit} handleFormChange={handleFormChange}>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="validationCustom01">
           <Form.Label>Email</Form.Label>
@@ -58,7 +41,7 @@ function LoginForm({ handleFormChange, onFormSubmit }) {
       <Button className="w-100" type="submit">
         Submit form
       </Button>
-    </Form>
+    </FormComp>
   );
 }
 

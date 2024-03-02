@@ -1,27 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import CardComp from "../../../components/Cards";
 import Card from "react-bootstrap/Card";
+import { useFormHook } from "../../../components/Form";
 import LoginForm from "./LoginForm";
 import SigninupLink from "../signinupLink";
 import axios from "axios";
 import "../authentication.css";
 import { useNavigate } from "react-router-dom";
 
+const initialFvalue = {
+  email: "",
+  password: "",
+};
+
 function Login() {
   const navigate = useNavigate();
 
-  const [formDataState, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formDataState,
-      [name]: value,
-    });
-  };
+  const { formDataState, handleFormChange } = useFormHook(initialFvalue);
 
   const onFormSubmit = () => {
     console.log("fro :>> ", formDataState);
@@ -47,7 +42,6 @@ function Login() {
       <CardComp className="mt-5 card-comp p-4">
         <Card.Title className="text-center fs-2 mb-4">Sign In</Card.Title>
         <LoginForm
-          setFormData={setFormData}
           handleFormChange={handleFormChange}
           onFormSubmit={onFormSubmit}
         />
