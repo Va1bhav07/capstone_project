@@ -17,8 +17,7 @@ const initialFvalue = {
 function Signup() {
   const navigate = useNavigate();
 
-  const { formDataState, handleFormChange, setFormData } =
-    useFormHook(initialFvalue);
+  const { formDataState, handleFormChange } = useFormHook(initialFvalue);
 
   const onFormSubmit = () => {
     console.log("fro :>> ", formDataState);
