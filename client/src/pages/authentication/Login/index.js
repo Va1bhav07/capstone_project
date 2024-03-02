@@ -5,8 +5,11 @@ import LoginForm from "./LoginForm";
 import SigninupLink from "../signinupLink";
 import axios from "axios";
 import "../authentication.css";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+
   const [formDataState, setFormData] = useState({
     email: "",
     password: "",
@@ -32,6 +35,7 @@ function Login() {
       .post(url, formDataState)
       .then(function (response) {
         console.log(response);
+        response?.status === 200 && navigate("/");
       })
       .catch(function (error) {
         console.log(error);
