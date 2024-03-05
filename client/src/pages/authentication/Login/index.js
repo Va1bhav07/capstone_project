@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CardComp from "../../../components/Cards";
 import Card from "react-bootstrap/Card";
 import { useFormHook } from "../../../components/Form";
 import LoginForm from "./LoginForm";
 import SigninupLink from "../signinupLink";
-import { apiAxios } from "../../../utilities/axios";
 import "../authentication.css";
 import { useNavigate } from "react-router-dom";
+import { loginAction } from "../../../services/actions/authActions";
+import { useDispatch, useSelector } from "react-redux";
 
 const initialFvalue = {
   email: "",
@@ -15,23 +16,21 @@ const initialFvalue = {
 
 function Login() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const authData = useSelector((state) => state.authReducer);
 
   const { formDataState, handleFormChange } = useFormHook(initialFvalue);
 
+  useEffect(() => {
+    authData.isLoggedIn && navigate("/");
+  }, [authData.isLoggedIn, navigate]);
+
   const onFormSubmit = async () => {
-    console.log("fro :>> ", formDataState);
     const { email, password } = formDataState;
-    const url = "/login";
     if (!email || !password) {
       return console.log("enter all values");
     }
-
-    const response = await apiAxios.post(url, formDataState);
-    response && navigate("/");
-
-    // .catch(function (error) {
-    //   console.log(error);
-    // });
+    dispatch(loginAction(formDataState));
   };
 
   return (
