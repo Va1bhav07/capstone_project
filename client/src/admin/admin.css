@@ -1,162 +1,152 @@
 /* Global Styles */
-body {
-    font-family: sans-serif;
-    margin: 0;
-    background-color: #f4f5f8; /* Light gray background */
-  }
-  
-  /* Container for main content */
-  .container {
-    display: flex;
-    min-height: 80vh;
-    min-width: 100vw;
-  }
-  
-  /* Sidebar styling */
-  .sidebar {
-    width: 250px; /* Adjust width as needed */
-    background-color: #fff;
-    padding: 20px;
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    height: calc(100% - 40px); /* Account for top and bottom paddings (adjust as needed) */
-    transition: all 0.2s ease-in-out; 
-  }
-  
-  .sidebar:hover {
-    background-color: #ffffff;
-    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
-  }
-  
+
+/* Container for main content */
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px; /* Adjust width as needed */
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  height: calc(
+    100% - 40px
+  ); /* Account for top and bottom paddings (adjust as needed) */
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar:hover {
+  background-color: #ffffff;
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2); /* Slightly deeper shadow on hover */
+}
 
 .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    margin-bottom: 10px;
-  }
-  
-  .sidebar ul li a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .sidebar ul li a:hover{
-    color: #336699;
-  }
-  
-  /* CourseManagement styling */
-  .course-management {
-    flex: 1;
-    padding: 20px;
-  }
-  
-  /* Header styling */
-  .header {
-    background-color: #336699; /* EduFlex primary color */
-    color: #fff;
-    padding: 15px;
-    text-align: center;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  /* Footer styling */
-  .footer {
-    background-color: #eee;
-    padding: 15px;
-    text-align: center;
-  }
-  
-  /* Additional styling for better aesthetics */
-  h1, h2, h3 {
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  
-  a {
-    color: #336699; /* EduFlex primary color for links */
-    text-decoration: none;
-  }
-  
-  button {
-    background-color: #336699; /* EduFlex primary color for buttons */
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Responsiveness for smaller screens */
-  @media (max-width: 768px) {
-    .sidebar {
-      width: 100%;
-      margin-bottom: 20px;
-    }
-  }
-  
+  list-style-type: none;
+  padding: 0;
+}
 
+.sidebar ul li {
+  margin-bottom: 10px;
+}
 
-  .course-management {
-    padding: 20px;
-  }
-  
-  .course-management h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .action-buttons {
-    margin-bottom: 20px;
-  }
-  
-  .action-buttons button {
-    margin-right: 10px;
-    padding: 8px 16px;
-    font-size: 16px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .action-buttons button:hover {
-    background-color: #0056b3;
-  }
-  
-  .course-list {
-    overflow-x: auto;
-  }
-  
-  .course-list table {
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.sidebar ul li a:hover {
+  color: #336699;
+}
+
+/* CourseManagement styling */
+.course-management {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Header styling */
+.header {
+  background-color: #336699; /* EduFlex primary color */
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #eee;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Additional styling for better aesthetics */
+h1,
+h2,
+h3 {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #336699; /* EduFlex primary color for links */
+  text-decoration: none;
+}
+
+button {
+  background-color: #336699; /* EduFlex primary color for buttons */
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
     width: 100%;
-    border-collapse: collapse;
+    margin-bottom: 20px;
   }
-  
-  .course-list th,
-  .course-list td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  .course-list th:first-child,
-  .course-list td:first-child {
-    min-width: 80px;
-  }
-  
-  .course-list th:last-child,
-  .course-list td:last-child {
-    text-align: center;
-  }
-  
-  .course-list tbody tr:hover {
-    background-color: #f5f5f5;
-  }
-  
-  .course-list tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-  }
-  
+}
+
+.course-management {
+  padding: 20px;
+}
+
+.course-management h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.action-buttons {
+  margin-bottom: 20px;
+}
+
+.action-buttons button {
+  margin-right: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.action-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.course-list {
+  overflow-x: auto;
+}
+
+.course-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.course-list th,
+.course-list td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.course-list th:first-child,
+.course-list td:first-child {
+  min-width: 80px;
+}
+
+.course-list th:last-child,
+.course-list td:last-child {
+  text-align: center;
+}
+
+.course-list tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.course-list tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}

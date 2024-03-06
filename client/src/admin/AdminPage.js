@@ -1,27 +1,26 @@
 // App.js
-import React, {useState} from 'react';
-import './admin.css';
-import Header from './adminhead';
-import Sidebar from './adminside';
-import CourseManagement from './coursemanagement';
+import React from "react";
+import "./admin.css";
+// import Header from "./adminhead";
+import Sidebar from "./adminside";
+import CourseManagement from "./coursemanagement";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-
-function App() {
+function AdminPage() {
   return (
-    <div className="App">
-      <Header />
-      <div className="container">
+    <Row className="mt-5">
+      <Col md={4}>
         <Sidebar />
+      </Col>
+      <Col md={8}>
         <CourseManagement />
-      </div>
-      <footer className="footer">
-        <p>&copy; 2024 EduFlex. All rights reserved.</p>
-      </footer>
-    </div>
+      </Col>
+    </Row>
   );
 }
 
-export default App;
+export default AdminPage;
 
 // const AdminPage = () => {
 //   const [showCourseForm, setShowCourseForm] = useState(false);
@@ -53,5 +52,3 @@ export default App;
 // };
 
 // export default AdminPage;
-
-

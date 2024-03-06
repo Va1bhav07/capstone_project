@@ -1,6 +1,6 @@
 // components/adminhead.js
-import React from 'react';
-import './admin.css';
+import React from "react";
+// import './admin.css';
 
 const adminhead = () => {
   return (
@@ -8,6 +8,6 @@ const adminhead = () => {
       <h1>EduFlex Admin Panel</h1>
     </header>
   );
-}
+};
 
 export default adminhead;
