@@ -1,13 +1,5 @@
 /* AboutUs.css */
 
-.about-us-container {
-  /* display: flex; */
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  width: 100%;
-}
-
 .about-us-content {
   background-color: #ecf0f1;
   border-radius: 12px;
@@ -35,12 +27,12 @@
   margin-top: 40px;
 }
 
-h3 {
+.about-us-section h3 {
   color: #3498db;
   margin-bottom: 15px;
 }
 
-iframe {
+.about-us-section iframe {
   margin-bottom: 0px;
 }
 
