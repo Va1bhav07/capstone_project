@@ -5,15 +5,22 @@ import App from "./App";
 import "bootstrap/dist/css/bootstrap.min.css";
 import reportWebVitals from "./reportWebVitals";
 import Layout from "./Layout/Main";
+import { ToastContainer } from "react-toastify";
+import { Provider } from "react-redux";
+import "react-toastify/dist/ReactToastify.css";
+import { store } from "./services/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Layout>
-        <App />
-      </Layout>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Layout>
+          <App />
+          <ToastContainer />
+        </Layout>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

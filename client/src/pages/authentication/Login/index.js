@@ -1,41 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import CardComp from "../../../components/Cards";
 import Card from "react-bootstrap/Card";
+import { useFormHook } from "../../../components/Form";
 import LoginForm from "./LoginForm";
 import SigninupLink from "../signinupLink";
-import axios from "axios";
 import "../authentication.css";
+import { useNavigate } from "react-router-dom";
+import { loginAction } from "../../../services/actions/authActions";
+import { useDispatch, useSelector } from "react-redux";
+
+const initialFvalue = {
+  email: "",
+  password: "",
+};
 
 function Login() {
-  const [formDataState, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const authData = useSelector((state) => state.authReducer);
 
-  const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formDataState,
-      [name]: value,
-    });
-  };
+  const { formDataState, handleFormChange } = useFormHook(initialFvalue);
 
-  const onFormSubmit = () => {
-    console.log("fro :>> ", formDataState);
+  useEffect(() => {
+    authData.isLoggedIn && navigate("/");
+  }, [authData.isLoggedIn, navigate]);
+
+  const onFormSubmit = async () => {
     const { email, password } = formDataState;
-    const url = "http://localhost:4000/login";
     if (!email || !password) {
       return console.log("enter all values");
     }
-
-    axios
-      .post(url, formDataState)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    dispatch(loginAction(formDataState));
   };
 
   return (
@@ -43,7 +38,6 @@ function Login() {
       <CardComp className="mt-5 card-comp p-4">
         <Card.Title className="text-center fs-2 mb-4">Sign In</Card.Title>
         <LoginForm
-          setFormData={setFormData}
           handleFormChange={handleFormChange}
           onFormSubmit={onFormSubmit}
         />
