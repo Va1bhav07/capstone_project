@@ -4,6 +4,9 @@ import CourseDetails from "./pages/courses/course-details";
 import InstructorDetails from "./pages/instructor/instructor-details";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
+import AboutUs from "./pages/About";
+import FAQs from "./pages/FAQ";
+import Admin from "./admin/AdminPage";
 
 function App() {
   return (
@@ -11,6 +14,9 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/faqs" element={<FAQs />} />
+      <Route path="/admin" element={<Admin />} />
       <Route path="/course-details" element={<CourseDetails />} />
       <Route path="/instructor-details" element={<InstructorDetails />} />
     </Routes>
