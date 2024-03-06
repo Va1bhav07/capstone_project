@@ -1,5 +1,7 @@
 import Login from "./pages/authentication/Login";
 import Signup from "./pages/authentication/Signup";
+import CourseDetails from "./pages/courses/course-details";
+import InstructorDetails from "./pages/instructor/instructor-details";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import AboutUs from "./pages/About";
@@ -14,8 +16,9 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/about-us" element={<AboutUs />} />
       <Route path="/faqs" element={<FAQs />} />
-
       <Route path="/admin" element={<Admin />} />
+      <Route path="/course-details" element={<CourseDetails />} />
+      <Route path="/instructor-details" element={<InstructorDetails />} />
     </Routes>
   );
 }
