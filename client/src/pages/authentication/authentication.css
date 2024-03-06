@@ -1,7 +1,9 @@
 .card-comp {
   width: 30%;
 }
-
+.card-course{
+  width: 100%;
+}
 @media screen and (max-width: 1200px) {
   .card-comp {
     width: 50%;
