@@ -11,5 +11,8 @@
     "start-client": "cd client && npm run start"
   },
   "author": "Vaibhav Arora",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "server": "^1.0.38"
+  }
 }
