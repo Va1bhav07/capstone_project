@@ -5,6 +5,8 @@ import CourseDetails from "./pages/courses/course-details";
 import Home from "./pages/Home";
 import { Routes, Route } from "react-router-dom";
 import InstructorDetails from "./pages/instructor/instructor-details";
+import PrivateRoutes from "./Layout/routes/private-routes";
+import ProtectedRoutes from "./Layout/routes/protected-routes";
 
 function App() {
   return (
@@ -13,8 +15,13 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/signout" element={<SignOut />} />
-      <Route path="/course-details" element={<CourseDetails />} />
-      <Route path="/instructor-details" element={<InstructorDetails />} />
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/course-details" element={<CourseDetails />} />
+        <Route path="/instructor-details" element={<InstructorDetails />} />
+      </Route>
+      <Route element={<PrivateRoutes />}>
+        {/* routes for private i.e admin pages etc */}
+      </Route>
     </Routes>
   );
 }
