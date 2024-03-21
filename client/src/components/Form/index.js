@@ -4,6 +4,8 @@ import Form from "react-bootstrap/Form";
 export function useFormHook(initialState) {
   const [formDataState, setFormData] = useState(initialState);
 
+  // This is a dynamic form
+
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     name &&
