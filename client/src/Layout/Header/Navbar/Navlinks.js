@@ -41,6 +41,7 @@ function Navlinks() {
           </>
         ) : (
           <>
+            <Nav.Link href="/checkout">Checkout</Nav.Link>
             <Nav.Link eventKey="logout">Logout</Nav.Link>
           </>
         )}
