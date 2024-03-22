@@ -15,6 +15,7 @@ function NavbarComp() {
           <Image src = {logoImage} alt = "Brand Logo"  roundedCircle className="" style={{height:"75px", width:"75px"}}/>
           <Col className="italic">EduFlex</Col>
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navlinks />
       </Container>
