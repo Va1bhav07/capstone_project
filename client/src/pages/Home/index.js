@@ -135,8 +135,8 @@ return (
                 
               <Figure.Caption>
                <h5>{dummyData[1].name}</h5>
-               <Row>
-                  <Col md={{span:2, offset:3}} sm={{span:4, offset:2}} xs={12} className="mb-1">
+               <Row className="justify-content-center">
+                  <Col xs={12} sm={{span:4, offset:2}} md={{span:4, offset:0}} className="mb-1 buttons-details-enroll-padding">
                     <Button variant="outline-info" href="/course-details">Details</Button>
                   </Col>
                   <Col md={5} sm={4} xs={12}>
@@ -163,8 +163,8 @@ return (
               />  
               <Figure.Caption>
                 <h5>{dummyData[2].name}</h5>
-                <Row>
-                  <Col md={{span:2, offset:3}} sm={{span:4, offset:2}} xs={12} className="mb-1">
+                <Row className="justify-content-center">
+                  <Col xs={12} sm={{span:4, offset:2}} md={{span:4, offset:0}} className="mb-1 buttons-details-enroll-padding">
                     <Button variant="outline-info" href="/course-details">Details</Button>
                   </Col>
                   <Col md={5} sm={4} xs={12}>
@@ -179,7 +179,7 @@ return (
           </Col>
 
           <Col className="text-center vertical-separator remove-separator-sm  mt-4 mb-4" xs={12} sm={12} md={4}>
-          <Badge pill className="margin-top-xs">NEW!</Badge>
+          <Badge pill className="margin-top-xs margin-top-sm">NEW!</Badge>
             
             <Figure className="mt-1">
               <Figure.Image
@@ -191,8 +191,8 @@ return (
               />  
               <Figure.Caption>
                <h5>{dummyData[0].name}</h5>
-               <Row>
-                  <Col md={{span:2, offset:3}} sm={{span:3, offset:3}} xs={12} className="mb-1">
+               <Row className="justify-content-center">
+                  <Col className="mb-1 buttons-details-enroll-padding" xs={12} sm={{span:2, offset:0}} md={{span:4, offset:0}}>
                     <Button variant="outline-info" href="/course-details">Details</Button>
                   </Col>
                   <Col md={5} sm={1} xs={12}>
