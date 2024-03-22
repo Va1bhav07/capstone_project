@@ -66,7 +66,6 @@ const LoginUser = async (req, res) => {
       success: true,
       message: "Login Successful.",
       foundUser,
-      fullName: foundUser.fullName,
     });
   } catch (error) {
     console.error("Error finding user:", error);
