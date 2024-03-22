@@ -7,6 +7,8 @@ import { Routes, Route } from "react-router-dom";
 import AboutUs from "./pages/About";
 import FAQs from "./pages/FAQ";
 import Admin from "./admin/AdminPage";
+import UserProfile from "./pages/userProfile/usrProfile";
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
       <Route path="/admin" element={<Admin />} />
       <Route path="/course-details" element={<CourseDetails />} />
       <Route path="/instructor-details" element={<InstructorDetails />} />
+      <Route path="/userprofile" element={<UserProfile />} />
     </Routes>
   );
 }
