@@ -9,6 +9,7 @@ import FAQs from "./pages/FAQ";
 import Admin from "./admin/AdminPage";
 import UserProfile from "./pages/userProfile/usrProfile";
 
+
 function App() {
   return (
     <Routes>
@@ -20,6 +21,7 @@ function App() {
       <Route path="/admin" element={<Admin />} />
       <Route path="/course-details" element={<CourseDetails />} />
       <Route path="/instructor-details" element={<InstructorDetails />} />
+
       <Route path="/userprofile" element={<UserProfile />} />
 
     </Routes>
