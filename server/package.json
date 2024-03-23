@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -w server index.js"
+    "start": "nodemon -w server/index.js"
   },
   "author": "Vaibhav Arora",
   "license": "ISC",

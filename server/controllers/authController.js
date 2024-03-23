@@ -77,4 +77,34 @@ const LoginUser = async (req, res) => {
   }
 };
 
-module.exports = { SignUpUser, LoginUser };
+// Get all users
+const GetUsers = async (req, res) => {
+  try {
+    const courses = await UserModel.find();
+    res.status(200).json({ success: true, data: courses });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
+
+const DeleteUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    if (!id) {
+      throw new Error("id is required");
+    }
+    const deletedCourse = await UserModel.findByIdAndDelete(id);
+    if (!deletedCourse) {
+      return res
+        .status(404)
+        .json({ success: false, message: "User not found" });
+    }
+    res
+      .status(200)
+      .json({ success: true, message: "User deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+};
+
+module.exports = { SignUpUser, LoginUser, GetUsers, DeleteUser };
