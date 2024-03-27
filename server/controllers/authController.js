@@ -77,4 +77,32 @@ const LoginUser = async (req, res) => {
   }
 };
 
-module.exports = { SignUpUser, LoginUser };
+const AdminLogin = async (req, res) => {
+  console.log("req.body :>> ", req.body);
+  try {
+    const { email, password } = req.body;
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Email and password are required.",
+      });
+    }
+    const foundUser = true;
+    if (!foundUser) throw new Error("foundUser returns falsy value");
+
+    res.status(201).json({
+      success: true,
+      message: "Admin Found successfully.",
+      foundUser,
+    });
+  } catch (error) {
+    console.error("Error finding admin:", error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+      errormsg: `${error.message}===> ${error.name}`,
+    });
+  }
+};
+
+module.exports = { SignUpUser, LoginUser,AdminLogin };
