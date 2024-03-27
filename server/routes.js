@@ -20,5 +20,6 @@ router.post("/api/instructorData", instrctutorController.InstructorDetails);
 // ============== Course Api ===============
 router.get("/api/getCourses", courseController.getCourses);
 router.post("/api/createCourse", courseController.createCourse);
+router.post("/admin-login", authController.AdminLogin);
 
 module.exports = router;

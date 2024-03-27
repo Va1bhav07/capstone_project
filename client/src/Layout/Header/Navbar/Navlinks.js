@@ -21,6 +21,7 @@ function Navlinks() {
       <Nav className="justify-content-center flex-grow-1">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/about-us">About</Nav.Link>
+        <Nav.Link href="/userprofile">User profile</Nav.Link>
         <Nav.Link href="/privacy-policy">Privacy Policy</Nav.Link>
       </Nav>
       {/* <Form className="d-flex">
@@ -40,6 +41,7 @@ function Navlinks() {
           </>
         ) : (
           <>
+            <Nav.Link href="/checkout">Checkout</Nav.Link>
             <Nav.Link eventKey="logout">Logout</Nav.Link>
           </>
         )}
