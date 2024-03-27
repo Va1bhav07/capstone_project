@@ -8,7 +8,7 @@ import AboutUs from "./pages/About";
 import FAQs from "./pages/FAQ";
 import Admin from "./admin/AdminPage";
 import UserProfile from "./pages/userProfile/usrProfile";
-
+import CourseList from "./pages/courses/courseList";
 
 function App() {
   return (
@@ -22,6 +22,7 @@ function App() {
       <Route path="/course-details" element={<CourseDetails />} />
       <Route path="/instructor-details" element={<InstructorDetails />} />
       <Route path="/userprofile" element={<UserProfile />} />
+      <Route path="/course-list" element={<CourseList />} />
     </Routes>
   );
 }
