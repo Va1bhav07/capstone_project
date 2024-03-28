@@ -62,6 +62,14 @@ function SignupForm({ onFormSubmit, handleFormChange }) {
           feedbackType="invalid"
         />
       </Form.Group>
+      <Form.Group className="mb-3">
+        <Form.Check
+          label="Do you want to join as instructor?"
+          feedbackType="invalid"
+          name="userType"
+          value="instructor"
+        />
+      </Form.Group>
       <Button className="w-100" type="submit">
         Submit form
       </Button>

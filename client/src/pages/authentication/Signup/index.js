@@ -27,7 +27,7 @@ function Signup() {
       return console.log("enter all values");
     }
     const response = await apiAxios.post(url, formDataState);
-    response && navigate("/");
+    response && navigate("/login");
   };
 
   return (

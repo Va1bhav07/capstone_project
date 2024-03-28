@@ -4,8 +4,8 @@ const bcrypt = require("bcrypt");
 const SignUpUser = async (req, res) => {
   console.log("req.body :>> ", req.body);
   try {
-    const { fullName, email, password } = req.body;
-    const userData = { email, password, fullName };
+    const { fullName, email, password, userType } = req.body;
+    const userData = { email, password, fullName, userType: userType };
     if (!email || !password || !fullName) {
       return res.status(400).json({
         success: false,

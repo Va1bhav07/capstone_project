@@ -17,6 +17,10 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  userType: {
+    type: String,
+    default: "student",
+  },
 });
 
 userSchema.pre("save", function (next) {

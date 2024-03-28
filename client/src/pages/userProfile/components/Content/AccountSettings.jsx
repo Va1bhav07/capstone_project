@@ -7,19 +7,16 @@ function AccountSettings() {
       gap={6}
     >
       <FormControl id="firstName">
-        <FormLabel>First Name</FormLabel>
-        <Input focusBorderColor="brand.blue" type="text" placeholder="Sadab" />
+        <FormLabel>Name</FormLabel>
+        <Input focusBorderColor="brand.blue" type="text" placeholder="" />
       </FormControl>
-      <FormControl id="lastName">
-        <FormLabel>Last Name</FormLabel>
-        <Input focusBorderColor="brand.blue" type="text" placeholder="Khan" />
-      </FormControl>
+  
       <FormControl id="phoneNumber">
         <FormLabel>Phone Number</FormLabel>
         <Input
           focusBorderColor="brand.blue"
           type="tel"
-          placeholder="(408) 996–1010"
+          placeholder=""
         />
       </FormControl>
       <FormControl id="emailAddress">
@@ -27,7 +24,15 @@ function AccountSettings() {
         <Input
           focusBorderColor="brand.blue"
           type="email"
-          placeholder="khan@conestogac.on.ca"
+          placeholder=""
+        />    
+      </FormControl>
+      <FormControl id="password">
+        <FormLabel>Password</FormLabel>
+        <Input
+          focusBorderColor="brand.blue"
+          type="password"
+          placeholder="********"
         />
       </FormControl>
       <FormControl id="city">
@@ -36,7 +41,7 @@ function AccountSettings() {
           <option value="brampton">Brampton</option>
           <option value="washington">Washington</option>
           <option value="whitby">Whitby</option>
-          <option value="toronto" selected>
+          <option value="toronto">
             Toronto
           </option>
           <option value="london">London</option>
@@ -47,7 +52,7 @@ function AccountSettings() {
       <FormControl id="country">
         <FormLabel>Country</FormLabel>
         <Select focusBorderColor="brand.blue" placeholder="Select country">
-          <option value="canada" selected>
+          <option value="canada" >
             Canada
           </option>
           <option value="england">England</option>

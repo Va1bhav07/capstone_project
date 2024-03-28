@@ -6,7 +6,7 @@ import CompanySettings from './CompanySettings.jsx'
 import Notifications from './Notifications.jsx'
 
 const Content = () => {
-  const tabs = ['Account Settings', 'Company Settings', 'Notifications']
+  const tabs = ['Account Settings']
 
   return (
     <Box
@@ -45,9 +45,9 @@ const Content = () => {
           <TabPanel>
             <AccountSettings />
           </TabPanel>
-          <TabPanel>
+          {/* <TabPanel>
             <CompanySettings />
-          </TabPanel>
+          </TabPanel> */}
           <TabPanel>
             <Notifications />
           </TabPanel>
